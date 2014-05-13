@@ -1,18 +1,19 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
-getCurrentLocation();}
+getCurrentLocation();
+downloadTile();}
 
 function getCurrentLocation() {
 			window.requestFileSystem(LocalFileSystem.PERSISTENT, 0,	filesys(FS),
-				function(error) {
-					$("#debug").append("Can't get filesystem<br />");
-				}
-			);
+				onError(error));
 		}
 function filesys(FS)  {
 					$("#debug").append("Root path : " + FS.root.fullPath + "<br />");
 					downloadMap(48.844077, 2.3737547, 10, FS);
+				}
+function onError(error) {
+					$("#debug").append("Can't get filesystem<br />");
 				}
 
 function downloadMap(lat, lon, rayon, fileSystem) {
