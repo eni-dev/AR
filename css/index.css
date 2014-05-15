@@ -1,0 +1,70 @@
+* {
+	/* make transparent link selection, adjust last value opacity 0 to 1.0 */
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+	/* prevent callout to copy image, etc when tap to hold */
+	-webkit-touch-callout: none;
+	/* prevent webkit from resizing text to fit */
+	-webkit-text-size-adjust: none;
+	/* prevent copy paste, to allow, change 'none' to 'text' */
+	-webkit-user-select: none;
+	font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+}
+
+/* Portrait layout (default) */
+.status {
+	text-align: center;
+	top: 0;
+	position: absolute;
+	width: 100%;
+	z-index: 100;
+}
+
+/* Leaflet.js */
+#map {
+	height: 100%;
+	width: 100%;
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width: 400px) {
+}
+
+.event {
+	color: #FFFFFF;
+	font-size: 12px;
+}
+
+.event.listening {
+	background-color: #333333;
+	display: block;
+}
+
+.event.received {
+	background-color: #4B946A;
+	display: none;
+}
+
+@keyframes fade {
+	from { opacity: 1.0; }
+	50% { opacity: 0.4; }
+	to { opacity: 1.0; }
+}
+
+@-webkit-keyframes fade {
+	from { opacity: 1.0; }
+	50% { opacity: 0.4; }
+	to { opacity: 1.0; }
+}
+ 
+.blink {
+	animation: fade 3000ms infinite;
+	-webkit-animation: fade 3000ms infinite;
+}
