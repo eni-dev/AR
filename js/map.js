@@ -5,8 +5,8 @@ getCurrentLocation();
 downloadTile();}
 
 function getCurrentLocation() {
-			window.requestFileSystem(LocalFileSystem.PERSISTENT, 0,	filesys(FS),
-				onError(error));
+			window.requestFileSystem(LocalFileSystem.PERSISTENT, 0,	filesys,
+				onError);
 		}
 function filesys(FS)  {
 					$("#debug").append("Root path : " + FS.root.fullPath + "<br />");
