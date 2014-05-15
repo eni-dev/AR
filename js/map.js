@@ -34,9 +34,9 @@ function downloadMap(lat, lon, rayon, fileSystem) {
 function downloadTile(tileX, tileY, minTileX, minTileY, maxTileX, maxTileY, fileSystem) {
 	var fileTransfer = new FileTransfer();
 	fileTransfer.download(
-		"http://a.tile.openstreetmap.org/15/" + tileX + "/" + tileY + ".png",
+		'http://a.tile.openstreetmap.org/15/' + tileX + '/' + tileY + '.png',
 		//fileSystem.root.fullPath+"sdcard/openstreetmap/15/" + tileX + "/" + tileY + ".png",
-		"file:///sdcard/openstreetmap/15/" + tileX + "/" + tileY + ".png",
+		'file:///sdcard/openstreetmap/15/' + tileX + '/' + tileY + '.png',
 		function(entry) {
 			$("#debug").append("Downloaded tile " + tileX + ":" + tileY + " from server a<br />");
 			if(tileX < maxTileX) {
